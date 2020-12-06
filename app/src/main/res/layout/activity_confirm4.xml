@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".reg.Confirm4Activity">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_marginTop="30dp"
+        android:layout_height="150dp"
+        android:src="@drawable/icon_design_sms"
+        android:elevation="4dp"
+        android:layout_gravity="center_horizontal"
+        tools:targetApi="lollipop" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verification Code"
+        android:fontFamily="sans-serif"
+        android:gravity="center_horizontal"
+        android:textSize="22sp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginHorizontal="25dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:gravity="center"
+        android:layout_marginVertical="10dp"
+        android:text="Code has been sent to your phone number please verify"
+        android:textSize="18sp"/>
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginVertical="10dp"
+        android:textSize="22sp"
+        android:textColor="@color/black"
+        android:inputType="number"
+        android:hint="CODE"
+        android:gravity="center"
+        android:backgroundTint="@color/black"
+        tools:targetApi="lollipop" />
+
+    <Button
+        android:id="@+id/verify_btn"
+        android:layout_width="180dp"
+        android:layout_height="55dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_gravity="center"
+        android:text="Verify"
+        android:layout_marginVertical="10dp"
+        android:textAllCaps="false"
+        android:textSize="22sp"/>
+</LinearLayout>
