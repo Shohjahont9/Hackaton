@@ -13,6 +13,9 @@ import com.example.hackaton.databinding.FragmentHomeBinding
 class HomeFragment : Fragment() {
 
     lateinit var recyclerView: RecyclerView
+    lateinit var recyclerView2: RecyclerView
+    lateinit var reAdapter: AksiyaAdapter
+    val listOfAksiya: MutableList<Aksiya> = ArrayList()
     lateinit var recyclerAdapter: RecyclerAdapter
     var listofVil: MutableList<Viloyat> = ArrayList()
     lateinit var binding: FragmentHomeBinding
@@ -35,15 +38,23 @@ class HomeFragment : Fragment() {
         listofVil.clear()
 
         init()
-
+        init1()
         recyclerView = binding.recyler
+        recyclerView2 = binding.recyler1
 
         recyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext())
-            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             setHasFixedSize(true)
             recyclerAdapter = RecyclerAdapter(listofVil)
             adapter = recyclerAdapter
+        }
+        recyclerView2.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            setHasFixedSize(true)
+            reAdapter = AksiyaAdapter(listOfAksiya)
+            adapter = reAdapter
         }
 
 
@@ -63,6 +74,18 @@ class HomeFragment : Fragment() {
         listofVil.add(Viloyat(R.drawable.guliston, "Guliston"))
         listofVil.add(Viloyat(R.drawable.andijon, "Andijon"))
 
+    }
+
+    private fun init1() {
+        listOfAksiya.add(Aksiya(R.drawable.uzkim, "Uz Kimyosanoat", "0.01", "$20"))
+        listOfAksiya.add(Aksiya(R.drawable.uzcharm, "Uz Charmsanoat", "0.5", "$110"))
+        listOfAksiya.add(Aksiya(R.drawable.qizilqum, "Qizilqum", "2", "$2000"))
+        listOfAksiya.add(Aksiya(R.drawable.tosh, "Toshkent kompinat", "1", "$20000"))
+        listOfAksiya.add(Aksiya(R.drawable.korea, "Korean Air", "0.2", "$1500"))
+        listOfAksiya.add(Aksiya(R.drawable.toshkent, "Tosh shahar Avtosanoat", "1", "$500"))
+        listOfAksiya.add(Aksiya(R.drawable.navoiy, "NavoiAzot", "20", "$170"))
+        listOfAksiya.add(Aksiya(R.drawable.jizzax, "Jizzax sanoat", "7", "$1500"))
+        listOfAksiya.add(Aksiya(R.drawable.andijon, "UzAutoMotors AJ", "1", "$250000"))
     }
 
 
